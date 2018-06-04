@@ -34,6 +34,7 @@ class OrderController extends Controller
      * Lists all Order models.
      * @return mixed
      */
+
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
