@@ -4,6 +4,7 @@ namespace app\models;
 
 use yii\base\NotSupportedException;
 use yii\db\ActiveRecord;
+use \yii\web\IdentityInterface;
 
 /**
  * Class User
@@ -16,7 +17,7 @@ use yii\db\ActiveRecord;
  * @property string $auth_key;
  * @property integer $role;
  */
-class User extends ActiveRecord implements \yii\web\IdentityInterface
+class User extends ActiveRecord implements IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -89,11 +90,12 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
-        return \Yii::$app->security->validatePassword($password, $this->password_hash);    }
+        return \Yii::$app->security->validatePassword($password, $this->password_hash);
+    }
 
     public function attributes()
     {
-        return ['id', 'username','email', 'password', 'password_hash', 'auth_key', 'role'];
+        return ['id', 'username', 'email', 'password', 'password_hash', 'auth_key', 'role'];
     }
 
     /**

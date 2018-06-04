@@ -249,69 +249,21 @@ desired effect
             \yiister\adminlte\widgets\Menu::widget(
                 [
                     "items" => [
-                        ["label" => "Home", "url" => "/", "icon" => "home"],
-                        ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
-                        ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
-                        [
-                            "label" => "Widgets",
-                            "icon" => "th",
-                            "url" => "#",
-                            "items" => [
-                                ["label" => "Menu", "url" => ["site/menu"]],
-                                ["label" => "Boxes", "url" => ["site/boxes"]],
-                                ["label" => "FlashAlert", "url" => ["site/flash-alert"]],
-                                ["label" => "Callouts", "url" => ["site/callouts"]],
-                            ],
-                        ],
-                        [
-                            "label" => "Badges",
-                            "url" => "#",
-                            "icon" => "table",
-                            "items" => [
-                                [
-                                    "label" => "Default",
-                                    "url" => "#",
-                                    "icon" => "table",
-                                    "badge" => "123",
-                                ],
-                                [
-                                    "label" => "Blue",
-                                    "url" => "#",
-                                    "icon" => "table",
-                                    "badge" => "123",
-                                    "badgeOptions" => [
-                                        "class" => \yiister\adminlte\components\AdminLTE::BG_BLUE,
-                                    ],
-                                ],
-                            ],
-                        ],
-                        [
-                            "label" => "Multilevel",
-                            "url" => "#",
-                            "icon" => "table",
-                            "items" => [
-                                [
-                                    "label" => "Second level",
-                                    "url" => "#",
-                                ],
-                                [
-                                    "label" => "Second level",
-                                    "url" => "#",
-                                    "icon" => "table",
-                                    "items" => [
-                                        [
-                                            "label" => "Default",
-                                            "url" => "#",
-                                        ],
-                                        [
-                                            "label" => "Red",
-                                            "url" => "#",
-                                            "icon" => "table",
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
+                        ["label" => "Home", "url" => "/admin", "icon" => "home"],
+                        ["label" => "Orders", "url" => "/admin/order/index", "icon" => "home"],
+
+//                        [
+//                            "label" => "Widgets",
+//                            "icon" => "th",
+//                            "url" => "#",
+//                            "items" => [
+//                                ["label" => "Menu", "url" => ["site/menu"]],
+//                                ["label" => "Boxes", "url" => ["site/boxes"]],
+//                                ["label" => "FlashAlert", "url" => ["site/flash-alert"]],
+//                                ["label" => "Callouts", "url" => ["site/callouts"]],
+//                            ],
+//                        ],
+
                     ],
                 ]
             )
@@ -345,7 +297,10 @@ desired effect
 
         <!-- Main content -->
         <section class="content">
-            <?= $content ?>
+            <div class="container">
+                <?= $content ?>
+            </div>
+
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
